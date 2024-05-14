@@ -1,14 +1,470 @@
 <html lang="en" op="item"><head><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="news.css">
     <link rel="icon" href="y18.svg">
 <link rel="canonical" href="https://news.ycombinator.com/item?id=40176338">            <title>in addition to contributing to upstream python, we \* maintained a stable versio... | Hacker News</title></head><body><center><table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
-    <tbody>
+    <tbody><tr><td bgcolor="#ff6600"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px"><tbody><tr><td style="width:18px;padding-right:4px"><a href="https://news.ycombinator.com"><img src="y18.svg" width="18" height="18" style="border:1px white solid; display:block"></a></td>
+              <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="news">Hacker News</a></b>
+                        <a href="newest">new</a> | <a href="front">past</a> | <a href="newcomments">comments</a> | <a href="ask">ask</a> | <a href="show">show</a> | <a href="jobs">jobs</a> | <a href="submit" rel="nofollow">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                          <a href="login?goto=item%3Fid%3D40176338">login</a>
+                      </span></td>
+          </tr></tbody></table></td></tr>
 <tr id="pagespace" title="in addition to contributing to upstream python, we \* maintained a stable versio..." style="height:10px"></tr><tr><td><table class="fatitem" border="0">
-<tbody><tr class="athing" id="40176338">    <td class="default"><div class="comment">
-              <span class="commtext c00"><p>Foo</p></span></div></td></tr>
-  </tbody></table>
-
+<tbody><tr class="athing" id="40176338">    <td class="ind"></td><td valign="top" class="votelinks">
+  <center><a id="up_40176338" href="vote?id=40176338&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T01:42:49"><a href="item?id=40176338">16 days ago</a></span> <span id="unv_40176338"></span>          <span class="navs">
+         | <a href="item?id=40173646">parent</a> | <a href="context?id=40176338" rel="nofollow">context</a> | <a href="fave?id=40176338&amp;auth=a9c1f991ced2f3c75af3ccae0d907285b2362a13">favorite</a><span class="onstory"> |  on: <a href="item?id=40171125">Google lays off its Python team</a></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">in addition to contributing to upstream python, we<p>* maintained a stable version of python within google, and made sure that everything in the monorepo worked with it. in my time on the team we moved from 2.7 to 3.6, then incrementally to 3.11, each update taking months to over a year because the rule at google is if you check any code in, you are responsible for every single breakage it causes</p><p>* maintained tools to keep thousands of third party packages constantly updated from their open source versions, with patch queues for the ones that needed google-specific changes</p><p>* had highly customised versions of tools like pylint and black, targeted to google's style guide and overall codebase</p><p>* contributed to pybind11, and maintained tools for c++ integration</p><p>* developed and maintained build system rules for python, including a large effort to move python rules to pure starlark code rather than having them entangled in the blaze/bazel core engine</p><p>* developed and maintained a typechecker (pytype) that would do inference on code without type annotations, and work over very large projects with a one-file-at-a-time architecture (this was my primary job at google, ama)</p><p>* performed automated refactorings across hundreds of millions of lines of code</p><p>and that was just the dev portion of our jobs. we also acted as a help desk of sorts for python users at google, helping troubleshoot tricky issues, and point newcomers in the right direction. plus we worked with a lot of other teams, including the machine learning and AI teams, the colaboratory and IDE teams, teams like protobuf that integrated with and generated python bindings, teams like google cloud who wanted to offer python runtimes to their customers, teams like youtube who had an unusually large system built in python and needed to do extraordinary things to keep it performant and maintainable.</p><p>and we did all this for years with fewer than 10 people, most of whom loved the work and the team so much that we just stayed on it for years. also, despite the understaffing, we had managers who were extremely good about maintaining work/life balance and the "marathon, not sprint" approach to work. as i said in another comment, it's the best job i've ever had, and i'll miss it deeply.
+          </p><div class="reply"></div></span></div></td></tr>
+  </tbody></table><br><br><table border="0" class="comment-tree">
+        <tbody><tr class="athing comtr" id="40182071"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40182071" href="vote?id=40182071&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T18:05:14"><a href="item?id=40182071">15 days ago</a></span> <span id="unv_40182071"></span>          <span class="navs">
+         | <a href="#40190830" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40182071" n="6" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">&gt; the rule at google is if you check any code in, you are responsible for every single breakage it causes<p>i can no longer edit my post to clarify this, but by "responsible for breakages" i meant that if your new check-in caused any CI tests anywhere within the codebase to fail, <i>even if due to bugs in the other code</i>, you had to stop and fix it, or get the owners to fix it, or find some principled way to temporarily disable those tests, before you could check your code in.</p><p>this was a very real issue for things like the python runtime or widely used code checkers like pytype or pylint, because if e.g. the new version of python, or some improved check in pytype, started raising failures in a code pattern that was technically wrong but which the existing toolchain did not complain about, you could not release the new version until you had fixed all those new breakages.</p><p>contrast this with non-monorepo codebases, where the other code would have had to deal with the fact that "oh, our code works under 3.10 but 3.11 broke it, guess we have to pin our own repo to 3.10 until we fix it", but as the python team we could just say "we support 3.11 now, you need to catch up"
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40183476"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183476" href="vote?id=40183476&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=Arainach" class="hnuser">Arainach</a> <span class="age" title="2024-04-27T20:57:34"><a href="item?id=40183476">15 days ago</a></span> <span id="unv_40183476"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">parent</a> | <a href="#40190830" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40183476" n="5" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">&gt; i can no longer edit my post to clarify this, but by "responsible for breakages" i meant that if your new check-in caused any CI tests anywhere within the codebase to fail, even if due to bugs in the other code, you had to stop and fix it, or get the owners to fix it, or find some principled way to temporarily disable those tests, before you could check your code<p>Google engineers hate this one weird hack: just send a mail saying "we're deleting/deprecating [everything your product depends on] in [14-180] days, good luck!"
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40200349"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40200349" href="vote?id=40200349&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=pjc50" class="hnuser">pjc50</a> <span class="age" title="2024-04-29T16:19:34"><a href="item?id=40200349">14 days ago</a></span> <span id="unv_40200349"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">root</a> | <a href="#40183476" class="clicky" aria-hidden="true">parent</a> | <a href="#40221902" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40200349" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I'm guessing these are related. If every team is potentially responsible for breakages in every product, there's no such thing as a "just chugging along" product and there will be a constant demand to delete products that are not popular <i>within Google</i>.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40220226"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+  <center><a id="up_40220226" href="vote?id=40220226&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=Arainach" class="hnuser">Arainach</a> <span class="age" title="2024-05-01T06:36:48"><a href="item?id=40220226">12 days ago</a></span> <span id="unv_40220226"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">root</a> | <a href="#40200349" class="clicky" aria-hidden="true">parent</a> | <a href="#40221902" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40220226" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">It has nothing to do with popularity, it has everything to do with teams doing what get them promoted and not having to deal with cross org fallout.<p>At Microsoft, if there were 12 teams depending on service foo, the team who owned foo had to have a deprecation plan that included sufficient time and support for all 12 teams to get off foo, and directors/VPs would meet and come to terms before the deprecation started.</p><p>Google is the opposite. Despite an increasing trend towards top-down direction there's no requirement or support for involving stakeholders.  There can be internal products (let's say a data storage solution) and the team who owns it can say "we don't care about this anymore, it's being shut down in 6 months" even if dozens of other teams and millions of end users rely on it, and it's up to those teams to scramble, put other projects on hold, and try to migrate as fast as possible to avoid an outage.</p><p>It's frankly demotivating.  For the last 18 months, a huge percentage of eng time on my team has gone to either compliance or mandatory migration work i.e. stuff that ABSOLUTE BEST CASE customers don't notice.
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40220226&amp;goto=item%3Fid%3D40176338%2340220226" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40221902"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40221902" href="vote?id=40221902&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=mathstuf" class="hnuser">mathstuf</a> <span class="age" title="2024-05-01T11:35:42"><a href="item?id=40221902">12 days ago</a></span> <span id="unv_40221902"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">root</a> | <a href="#40183476" class="clicky" aria-hidden="true">parent</a> | <a href="#40200349" class="clicky" aria-hidden="true">prev</a> | <a href="#40186479" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40221902" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Don't forget to include the standard detailed changelog: "bugfixes and performance improvements".</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40221902&amp;goto=item%3Fid%3D40176338%2340221902" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40186479"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40186479" href="vote?id=40186479&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=lbruno" class="hnuser">lbruno</a> <span class="age" title="2024-04-28T06:31:45"><a href="item?id=40186479">15 days ago</a></span> <span id="unv_40186479"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">root</a> | <a href="#40183476" class="clicky" aria-hidden="true">parent</a> | <a href="#40221902" class="clicky" aria-hidden="true">prev</a> | <a href="#40190830" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40186479" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">this reminds me of kenton v's complaint about working on infra being so hard</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+                    <tr class="athing comtr" id="40190830"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40190830" href="vote?id=40190830&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=gpshead" class="hnuser">gpshead</a> <span class="age" title="2024-04-28T18:51:02"><a href="item?id=40190830">14 days ago</a></span> <span id="unv_40190830"></span>          <span class="navs">
+         | <a href="#40182071" class="clicky" aria-hidden="true">prev</a> | <a href="#40204200" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40190830" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Adding to the wonderful writeup by my now-ex teammate (thanks!):<p>Several of us were/are/TBD also involved in both long term strategic leadership and maintenance of the open source CPython project itself. That direct feedback line from a major diverse needs user into the project and ecosystem was valuable for the world.</p><p>The reason I stayed on this team for 12+ years is as zem said. It was an ideal impactful alignment of people, abilities, priorities, and work life balance. My prior teams at Google... were often not.</p><p>For the first half of our Python teams existence, there were only ~5 of us. Many early years were spent paying down internal tech debt accumulated from prior years of neglecting to have a strong Python strategy and letting too many do their own thing. Python was one of the very first languages used widely at Google. It was the last major backend language to get a language team.</p><p>Signed,
+-- the now-ex runtimes TL
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40190967"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40190967" href="vote?id=40190967&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-28T19:07:40"><a href="item?id=40190967">14 days ago</a></span> <span id="unv_40190967"></span>          <span class="navs">
+         | <a href="#40190830" class="clicky" aria-hidden="true">parent</a> | <a href="#40206834" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40190967" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">yes, i definitely should have said more about the cpython leadership work! i was responding to a comment that had already mentioned upstream contributions so i didn't think to highlight it more, but it was a huge contribution to both google and to cpython at large.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40206834"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40206834" href="vote?id=40206834&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=gooob" class="hnuser">gooob</a> <span class="age" title="2024-04-30T03:07:50"><a href="item?id=40206834">13 days ago</a></span> <span id="unv_40206834"></span>          <span class="navs">
+         | <a href="#40190830" class="clicky" aria-hidden="true">parent</a> | <a href="#40190967" class="clicky" aria-hidden="true">prev</a> | <a href="#40204200" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40206834" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">well, why don't you guys stay together and continue work? start your own thing! google fired you, yes, but you're still alive and able to communicate. maybe you won't get paid as much as you did at google. but prove to them that you have something of value to provide to society.</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40206834&amp;goto=item%3Fid%3D40176338%2340206834" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40204200"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40204200" href="vote?id=40204200&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=e40" class="hnuser">e40</a> <span class="age" title="2024-04-29T21:13:51"><a href="item?id=40204200">13 days ago</a></span> <span id="unv_40204200"></span>          <span class="navs">
+         | <a href="#40190830" class="clicky" aria-hidden="true">prev</a> | <a href="#40189033" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40204200" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">My guess: the people in your group have very high salaries and they want to dump them.  I would not be surprised if they hire people to make a new team at some point in the future.<p>I run HR at a small software company reports and my HR person has a lot of friends in HR at FAANGs.  For 10+ years we've been talking about hiring and salaries at Google (and others).  It's just crazy to me how high salaries have gotten.  I know someone that switched from Google to FB when they made $750k at Google and got $1M at FB.</p><p>I said all this to say: I've talked to a bunch of people over the last 6 months that know someone laid off and: 1) they had a very high salary, and 2) the group they were in was hiring.
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40204200&amp;goto=item%3Fid%3D40176338%2340204200" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40189033"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40189033" href="vote?id=40189033&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=offbyone" class="hnuser">offbyone</a> <span class="age" title="2024-04-28T14:52:32"><a href="item?id=40189033">15 days ago</a></span> <span id="unv_40189033"></span>          <span class="navs">
+         | <a href="#40204200" class="clicky" aria-hidden="true">prev</a> | <a href="#40204293" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40189033" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I was your opposite number at AWS for many years. Like you say, it was one of the best jobs I've ever had, but over there it was a career dead end. I wasn't laid off, but I had to leave it to have any hope of growing myself.<p>I feel for ya, zem; if you ever turn up at a PyCon in person, lemme buy you a drink.
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40190346"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40190346" href="vote?id=40190346&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-28T17:49:42"><a href="item?id=40190346">14 days ago</a></span> <span id="unv_40190346"></span>          <span class="navs">
+         | <a href="#40189033" class="clicky" aria-hidden="true">parent</a> | <a href="#40204293" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40190346" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I guess it was in some ways a career dead end at google too, I joined as a senior engineer and never bothered applying for promotion to staff, and most of my teammates were similar. On the other hand, I never felt I wasn't growing myself because I learnt a lot, took on some very ambitious projects, and was trusted with a lot of ownership and input into "what do you feel the most effective thing you could be working on right now is?"</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40204293"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40204293" href="vote?id=40204293&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=Canders42" class="hnuser">Canders42</a> <span class="age" title="2024-04-29T21:23:17"><a href="item?id=40204293">13 days ago</a></span> <span id="unv_40204293"></span>          <span class="navs">
+         | <a href="#40189033" class="clicky" aria-hidden="true">prev</a> | <a href="#40183625" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40204293" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">We are hiring here at Cruise and I believe your team could be a good fit for one of the roles that we are hiring for.<p>Here is the job description: <a href="https://www.getcruise.com/careers/jobs/2831153/" rel="nofollow">https://www.getcruise.com/careers/jobs/2831153/</a></p><p>If any of you are interested, feel free to directly reach out to the recruiter Connor Anderson (Connor.Anderson@getcruise.com) or feel free to apply directly.
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40204293&amp;goto=item%3Fid%3D40176338%2340204293" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40208245"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40208245" href="vote?id=40208245&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=webprofusion" class="hnuser">webprofusion</a> <span class="age" title="2024-04-30T07:42:19"><a href="item?id=40208245">13 days ago</a></span> <span id="unv_40208245"></span>          <span class="navs">
+         | <a href="#40204293" class="clicky" aria-hidden="true">parent</a> | <a href="#40183625" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40208245" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Only issue I can immediately see is that the salary is about a quarter of the FANG rate.</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40208245&amp;goto=item%3Fid%3D40176338%2340208245" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40210978"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40210978" href="vote?id=40210978&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=Canders42" class="hnuser">Canders42</a> <span class="age" title="2024-04-30T13:55:16"><a href="item?id=40210978">13 days ago</a></span> <span id="unv_40210978"></span>          <span class="navs">
+         | <a href="#40204293" class="clicky" aria-hidden="true">root</a> | <a href="#40208245" class="clicky" aria-hidden="true">parent</a> | <a href="#40208324" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40210978" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Please keep in mind that the listed salary range on the job description is only the median base salary range. Not the full total compensation range that includes bonus and other factors to it. We can pay much more than what is listed there from a total compensation standpoint.</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40210978&amp;goto=item%3Fid%3D40176338%2340210978" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40208324"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40208324" href="vote?id=40208324&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=nmfisher" class="hnuser">nmfisher</a> <span class="age" title="2024-04-30T07:54:31"><a href="item?id=40208324">13 days ago</a></span> <span id="unv_40208324"></span>          <span class="navs">
+         | <a href="#40204293" class="clicky" aria-hidden="true">root</a> | <a href="#40208245" class="clicky" aria-hidden="true">parent</a> | <a href="#40210978" class="clicky" aria-hidden="true">prev</a> | <a href="#40183625" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40208324" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I mean, that probably at least partly explains why they were laid off..</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40208324&amp;goto=item%3Fid%3D40176338%2340208324" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+                    <tr class="athing comtr" id="40183625"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183625" href="vote?id=40183625&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=dotancohen" class="hnuser">dotancohen</a> <span class="age" title="2024-04-27T21:15:23"><a href="item?id=40183625">15 days ago</a></span> <span id="unv_40183625"></span>          <span class="navs">
+         | <a href="#40204293" class="clicky" aria-hidden="true">prev</a> | <a href="#40282511" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40183625" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00"><p></p><pre><code>  &gt; very large projects with a one-file-at-a-time architecture (this was my primary job at google, ama)
+</code></pre>
+Is there any place where we could see such tools? A lot of the scripts that I write are contained in a single file, and I'm sure that there would be much to learn from seeing such project scripts. Thank you.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40183658"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183658" href="vote?id=40183658&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T21:19:42"><a href="item?id=40183658">15 days ago</a></span> <span id="unv_40183658"></span>          <span class="navs">
+         | <a href="#40183625" class="clicky" aria-hidden="true">parent</a> | <a href="#40282511" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40183658" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">it's open source! check out <a href="https://github.com/google/pytype">https://github.com/google/pytype</a> and <a href="https://github.com/google/pytype/blob/main/docs/developers/tools.md#analyze_project">https://github.com/google/pytype/blob/main/docs/developers/t...</a> for more on the multi-file runner</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40188989"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40188989" href="vote?id=40188989&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=dotancohen" class="hnuser">dotancohen</a> <span class="age" title="2024-04-28T14:46:58"><a href="item?id=40188989">15 days ago</a></span> <span id="unv_40188989"></span>          <span class="navs">
+         | <a href="#40183625" class="clicky" aria-hidden="true">root</a> | <a href="#40183658" class="clicky" aria-hidden="true">parent</a> | <a href="#40282511" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40188989" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Terrific! Thank you.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+                    <tr class="athing comtr" id="40282511"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40282511" href="vote?id=40282511&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=iamcreasy" class="hnuser">iamcreasy</a> <span class="age" title="2024-05-07T05:04:35"><a href="item?id=40282511">6 days ago</a></span> <span id="unv_40282511"></span>          <span class="navs">
+         | <a href="#40183625" class="clicky" aria-hidden="true">prev</a> | <a href="#40176796" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40282511" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">&gt; needed to do extraordinary things to keep it performant and maintainable.<p>This is very interesting. Can you share more about this?
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40282511&amp;goto=item%3Fid%3D40176338%2340282511" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40282868"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40282868" href="vote?id=40282868&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-05-07T06:13:27"><a href="item?id=40282868">6 days ago</a></span> <span id="unv_40282868"></span>          <span class="navs">
+         | <a href="#40282511" class="clicky" aria-hidden="true">parent</a> | <a href="#40176796" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40282868" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">i can't, unfortunately, it was youtube internal code. but by the same token a lot of the performance stuff was specific optimisations for that code and would not really generalise.<p>one of the current "extremely large python codebase" projects is instagram, and they do have some public repos, notably monkeytype (<a href="https://github.com/Instagram/MonkeyType">https://github.com/Instagram/MonkeyType</a>) which youtube did have its own analogue of, and cinder (<a href="https://engineering.fb.com/2022/05/02/open-source/cinder-jits-instagram/" rel="nofollow">https://engineering.fb.com/2022/05/02/open-source/cinder-jit...</a>). in general facebook's engineering blog is a great place to read about this sort of thing.
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40282868&amp;goto=item%3Fid%3D40176338%2340282868" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40176796"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40176796" href="vote?id=40176796&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=fluffyfe" class="hnuser">fluffyfe</a> <span class="age" title="2024-04-27T03:09:49"><a href="item?id=40176796">16 days ago</a></span> <span id="unv_40176796"></span>          <span class="navs">
+         | <a href="#40282511" class="clicky" aria-hidden="true">prev</a> | <a href="#40191056" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40176796" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">That is a lot of great work. Sorry to hear that it is gone. Take some time to rest and hope find somewhere with better vision!</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40191056"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40191056" href="vote?id=40191056&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=CydeWeys" class="hnuser">CydeWeys</a> <span class="age" title="2024-04-28T19:18:05"><a href="item?id=40191056">14 days ago</a></span> <span id="unv_40191056"></span>          <span class="navs">
+         | <a href="#40176796" class="clicky" aria-hidden="true">prev</a> | <a href="#40183512" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40191056" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Any guess how many SWE-yrs are now going to be spent migrating existing Python projects away from Python, now that Python seems to be unsupported at Google going forward?</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40183512"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183512" href="vote?id=40183512&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=stevage" class="hnuser">stevage</a> <span class="age" title="2024-04-27T21:01:14"><a href="item?id=40183512">15 days ago</a></span> <span id="unv_40183512"></span>          <span class="navs">
+         | <a href="#40191056" class="clicky" aria-hidden="true">prev</a> | <a href="#40214707" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40183512" n="5" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Can you say more about the automated refactoring? How did it work? How was it triggered? How much human involvement was there? Are any parts of it public?</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40183752"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183752" href="vote?id=40183752&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T21:31:37"><a href="item?id=40183752">15 days ago</a></span> <span id="unv_40183752"></span>          <span class="navs">
+         | <a href="#40183512" class="clicky" aria-hidden="true">parent</a> | <a href="#40214707" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40183752" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">can't say too much about it because it mostly used a lot of internal tools, but it was a combination of writing per-file utilities to do specific code transforms (think something like libcst), and then a framework to scan the google codebase, find affected files, and apply the transforms to them.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40184339"><td><table border="0">  <tbody><tr>    <td class="ind" indent="2"><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+  <center><a id="up_40184339" href="vote?id=40184339&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=banish-m4" class="hnuser">banish-m4</a> <span class="age" title="2024-04-27T22:54:56"><a href="item?id=40184339">15 days ago</a></span> <span id="unv_40184339"></span>          <span class="navs">
+         | <a href="#40183512" class="clicky" aria-hidden="true">root</a> | <a href="#40183752" class="clicky" aria-hidden="true">parent</a> | <a href="#40214707" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40184339" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Code mods are fun. Were they gated by human PR reviews, perhaps in batches, or applied without review?</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40184577"><td><table border="0">  <tbody><tr>    <td class="ind" indent="3"><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+  <center><a id="up_40184577" href="vote?id=40184577&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T23:30:52"><a href="item?id=40184577">15 days ago</a></span> <span id="unv_40184577"></span>          <span class="navs">
+         | <a href="#40183512" class="clicky" aria-hidden="true">root</a> | <a href="#40184339" class="clicky" aria-hidden="true">parent</a> | <a href="#40214707" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40184577" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">yes, gated by human reviews based on who owned the code, unless they were completely trivial and then were gated by a single global approver. there were always humans in the loop though.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40184793"><td><table border="0">  <tbody><tr>    <td class="ind" indent="4"><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+  <center><a id="up_40184793" href="vote?id=40184793&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=banish-m4" class="hnuser">banish-m4</a> <span class="age" title="2024-04-28T00:13:24"><a href="item?id=40184793">15 days ago</a></span> <span id="unv_40184793"></span>          <span class="navs">
+         | <a href="#40183512" class="clicky" aria-hidden="true">root</a> | <a href="#40184577" class="clicky" aria-hidden="true">parent</a> | <a href="#40214707" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40184793" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Ah makes sense. At another MAANG, there was a code mod template job with a half dozen subvariants. I recall using a variant that supported ripgrep piping to sed -i for a simple replacement mod. There were jobs properties controlling how many mods per diff and whether it needed human approval or not. I think I did one batched by 1000 running once every 2 weeks to keep noise down.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+                                <tr class="athing comtr" id="40214707"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40214707" href="vote?id=40214707&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=fullmetal09" class="hnuser">fullmetal09</a> <span class="age" title="2024-04-30T18:50:01"><a href="item?id=40214707">12 days ago</a></span> <span id="unv_40214707"></span>          <span class="navs">
+         | <a href="#40183512" class="clicky" aria-hidden="true">prev</a> | <a href="#40199637" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40214707" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">&gt; maintained tools to keep thousands of third party packages constantly updated from their open source versions.<p>Hi Zem could you say more about how you maintained those thousands of third party packages? We are facing the same issue and would love to hear your insight!
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40214707&amp;goto=item%3Fid%3D40176338%2340214707" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40215033"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40215033" href="vote?id=40215033&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-30T19:15:22"><a href="item?id=40215033">12 days ago</a></span> <span id="unv_40215033"></span>          <span class="navs">
+         | <a href="#40214707" class="clicky" aria-hidden="true">parent</a> | <a href="#40199637" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40215033" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">sure! it used a collection of tools, the main ones were<p>* copybara [<a href="https://github.com/google/copybara">https://github.com/google/copybara</a>] to mirror between github and our internal repo and transform the source tree layout to our internal conventions</p><p>* mercurial patch queues [<a href="https://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html" rel="nofollow">https://hgbook.red-bean.com/read/managing-change-with-mercur...</a>] to apply internal changes</p><p>there are internal tools to automate the copybara configuration for python packages specifically, and to map between mercurial and google's version control system, but that's the main idea, and a specific review process for adding new packages.</p><p>the process is actually documented here though not all the referenced tools are available (or even applicable) externally: <a href="https://opensource.google/documentation/reference/thirdparty/python" rel="nofollow">https://opensource.google/documentation/reference/thirdparty...</a>
+          </p><div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40215033&amp;goto=item%3Fid%3D40176338%2340215033" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40199637"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40199637" href="vote?id=40199637&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=emmy1989" class="hnuser">emmy1989</a> <span class="age" title="2024-04-29T15:32:35"><a href="item?id=40199637">14 days ago</a></span> <span id="unv_40199637"></span>          <span class="navs">
+         | <a href="#40214707" class="clicky" aria-hidden="true">prev</a> | <a href="#40205884" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40199637" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">@zem want to share this role with the Python team that was laidoff?
+<a href="https://jobs.lever.co/palantir/5e70bf3e-6383-4d1f-a53c-32ca6fbfeb4a" rel="nofollow">https://jobs.lever.co/palantir/5e70bf3e-6383-4d1f-a53c-32ca6...</a></span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+                  <tr class="athing comtr" id="40205884"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40205884" href="vote?id=40205884&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=cheviana37" class="hnuser">cheviana37</a> <span class="age" title="2024-04-30T00:20:18"><a href="item?id=40205884">13 days ago</a></span> <span id="unv_40205884"></span>          <span class="navs">
+         | <a href="#40199637" class="clicky" aria-hidden="true">prev</a> | <a href="#40181480" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40205884" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">We're hiring! <a href="https://boards.greenhouse.io/blackcanyonconsulting/jobs/5754387003" rel="nofollow">https://boards.greenhouse.io/blackcanyonconsulting/jobs/5754...</a>
+Good life work balance</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40205884&amp;goto=item%3Fid%3D40176338%2340205884" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40181480"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40181480" href="vote?id=40181480&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=iandanforth" class="hnuser">iandanforth</a> <span class="age" title="2024-04-27T16:55:47"><a href="item?id=40181480">15 days ago</a></span> <span id="unv_40181480"></span>          <span class="navs">
+         | <a href="#40205884" class="clicky" aria-hidden="true">prev</a> | <a href="#40203701" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40181480" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">When was pytype invoked? Runtime? CI/CD? Did it output types to be added to files or did it infer and then enable downstream tasks based on those inferences?</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40181673"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40181673" href="vote?id=40181673&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-27T17:16:41"><a href="item?id=40181673">15 days ago</a></span> <span id="unv_40181673"></span>          <span class="navs">
+         | <a href="#40181480" class="clicky" aria-hidden="true">parent</a> | <a href="#40203701" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40181673" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">it was invoked manually at build time, and then at CI/CD time (there was no runtime type checking). we did output types to pyi files (the python equivalent of C header files), but mainly we used the inferred types to check the code for type correctness - one of the unique selling points of pytype, and why google was developing its own typechecker in the first place, was that the other available python type checkers would check annotated code for consistency, but would not do anything about type errors in unannotated code. if pytype did detect type errors, the code failed CI and had to be fixed before it was checked in.<p>we did also have a separate tool that could merge the inferred types back into the source code as annotations, but it never got much uptake.
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40203701"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40203701" href="vote?id=40203701&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=Mxmilan" class="hnuser">Mxmilan</a> <span class="age" title="2024-04-29T20:25:26"><a href="item?id=40203701">13 days ago</a></span> <span id="unv_40203701"></span>          <span class="navs">
+         | <a href="#40181480" class="clicky" aria-hidden="true">prev</a> | <a href="#40199645" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40203701" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">sorry to hear about the situation at google, would love to help out. we connect laid-off engineers to startups. if anyone from the team is interested here is our discord server
+<a href="https://discord.com/invite/Bnp5zyc8nM" rel="nofollow">https://discord.com/invite/Bnp5zyc8nM</a></span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40203701&amp;goto=item%3Fid%3D40176338%2340203701" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40199645"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40199645" href="vote?id=40199645&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=emmy1989" class="hnuser">emmy1989</a> <span class="age" title="2024-04-29T15:33:06"><a href="item?id=40199645">14 days ago</a></span> <span id="unv_40199645"></span>          <span class="navs">
+         | <a href="#40203701" class="clicky" aria-hidden="true">prev</a> | <a href="#40202967" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40199645" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Hello! Please share this role with your team that was laid off
+<a href="https://jobs.lever.co/palantir/5e70bf3e-6383-4d1f-a53c-32ca6fbfeb4a" rel="nofollow">https://jobs.lever.co/palantir/5e70bf3e-6383-4d1f-a53c-32ca6...</a>
+encourage you to apply as well :)</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40202967"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40202967" href="vote?id=40202967&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=nocte" class="hnuser">nocte</a> <span class="age" title="2024-04-29T19:33:20"><a href="item?id=40202967">13 days ago</a></span> <span id="unv_40202967"></span>          <span class="navs">
+         | <a href="#40199645" class="clicky" aria-hidden="true">prev</a> | <a href="#40186237" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40202967" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">How can someone hire the whole team? :)</span>
+          <div class="reply">        <p><font size="1">
+                  <u><a href="reply?id=40202967&amp;goto=item%3Fid%3D40176338%2340202967" rel="nofollow">reply</a></u>
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40186237"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40186237" href="vote?id=40186237&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=elbear" class="hnuser">elbear</a> <span class="age" title="2024-04-28T05:29:44"><a href="item?id=40186237">15 days ago</a></span> <span id="unv_40186237"></span>          <span class="navs">
+         | <a href="#40202967" class="clicky" aria-hidden="true">prev</a> | <a href="#40184330" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40186237" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">Frankly, it sounds like a dream job for me too, to be responsible for a particular technology and make sure that it works for all your internal (and external) users.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+            <tr class="athing comtr" id="40186375"><td><table border="0">  <tbody><tr>    <td class="ind" indent="1"><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+  <center><a id="up_40186375" href="vote?id=40186375&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=zem" class="hnuser">zem</a> <span class="age" title="2024-04-28T06:05:44"><a href="item?id=40186375">15 days ago</a></span> <span id="unv_40186375"></span>          <span class="navs">
+         | <a href="#40186237" class="clicky" aria-hidden="true">parent</a> | <a href="#40184330" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40186375" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">agreed! it takes a certain kind of person to find that fun, but the people who enjoy it <i>really</i> enjoy it.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+              <tr class="athing comtr" id="40184330"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40184330" href="vote?id=40184330&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=banish-m4" class="hnuser">banish-m4</a> <span class="age" title="2024-04-27T22:53:25"><a href="item?id=40184330">15 days ago</a></span> <span id="unv_40184330"></span>          <span class="navs">
+         | <a href="#40186237" class="clicky" aria-hidden="true">prev</a> | <a href="#40196107" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40184330" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">When Wall St. concerns lead to imposing cannibalistic capitalism plans that are pennywise but pound foolish.<p>Just wait a few years. When they come calling for consulting services, charge them triple.
+          </p><div class="reply">        <p><font size="1">
+              </font>
+  </p></div></span></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40196107"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40196107" href="vote?id=40196107&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=arcamox" class="hnuser">arcamox</a> <span class="age" title="2024-04-29T08:55:43"><a href="item?id=40196107">14 days ago</a></span> <span id="unv_40196107"></span>          <span class="navs">
+         | <a href="#40184330" class="clicky" aria-hidden="true">prev</a> | <a href="#40183655" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="40196107" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I feel your pain. All the best!</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        <tr class="athing comtr" id="40183655"><td><table border="0">  <tbody><tr>    <td class="ind" indent="0"><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+  <center><a id="up_40183655" href="vote?id=40183655&amp;how=up&amp;goto=item%3Fid%3D40176338"><div class="votearrow" title="upvote"></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+      <a href="user?id=jpdaigle" class="hnuser">jpdaigle</a> <span class="age" title="2024-04-27T21:19:31"><a href="item?id=40183655">15 days ago</a></span> <span id="unv_40183655"></span>          <span class="navs">
+         | <a href="#40196107" class="clicky" aria-hidden="true">prev</a> <a class="togg clicky" id="40183655" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+              </span></div><br><div class="comment">
+              <span class="commtext c00">I’m so sorry.</span>
+          <div class="reply">        <p><font size="1">
+              </font>
+  </p></div></div></td></tr>
+    </tbody></table></td></tr>
+        </tbody></table>
+<br><br>
 </td></tr>
-      </tbody></table></center>
+<tr><td><img src="s.gif" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tbody><tr><td bgcolor="#ff6600"></td></tr></tbody></table><br>
+<center><span class="yclinks"><a href="newsguidelines.html">Guidelines</a> | <a href="newsfaq.html">FAQ</a> | <a href="lists">Lists</a> | <a href="https://github.com/HackerNews/API">API</a> | <a href="security.html">Security</a> | <a href="https://www.ycombinator.com/legal/">Legal</a> | <a href="https://www.ycombinator.com/apply/">Apply to YC</a> | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br>
+<form method="get" action="//hn.algolia.com/">Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false"></form></center></td></tr>      </tbody></table></center>
   <script type="text/javascript" src="hn.js"></script>
 
 </body></html>
